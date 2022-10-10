@@ -1,17 +1,15 @@
-let modalActive = document.getElementById("modal_main");
-let elementShow = document.getElementById("modal_success");
-modalActive.classList.add("modal_active");
+let modalMain = document.getElementById("modal_main");
+modalMain.classList.add("modal_active");
 
-
-
-let elementClose1 = document.getElementsByClassName("modal__close")[0];
-elementClose1.onclick = () => modalActive.classList.remove("modal_active");
-
-
-let showSuccess = document.getElementById("modal_success");
-let elementRed = document.getElementsByClassName("show-success")[0];
-elementRed.onclick = () => showSuccess.classList.add("modal_active");
-
-let elementClose = document.getElementsByClassName("modal__close")[2];
-
-elementClose.onclick = () => showSuccess.classList.remove("modal_active");
+let modalSuccess = document.getElementById("modal_success");
+closeButtons = document.getElementsByClassName("modal__close")
+for (var i = 0; i < closeButtons.length; i++) {
+    var button = closeButtons[i];
+    button.onclick = (el) => {
+        modal = el.target.parentElement.parentElement
+        modal.classList.remove("modal_active");
+        if (el.target.classList.contains('show-success')) {
+            modalSuccess.classList.add("modal_active");
+        }
+    }
+}
