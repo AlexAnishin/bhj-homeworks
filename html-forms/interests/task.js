@@ -32,18 +32,18 @@ class InterestsComponent {
 
     // обработчик для родительского чекбокса
     handleParent(target) {
-        const parentCheckbox = target ? .closest('.interests_active') ? .closest('.interest') ? .querySelector('label>.interest__check');
+        const parentCheckbox = target ?.closest('.interests_active') ?.closest('.interest') ?.querySelector('label>.interest__check');
 
         if (!parentCheckbox) {
             return;
         }
 
-        const childCheckboxesCount = [...parentCheckbox ? .parentElement ? .nextElementSibling ? .children];
+        const childCheckboxesCount = [...parentCheckbox ?.parentElement ?.nextElementSibling ?.children];
         let checkedCount = 0;
 
         if (parentCheckbox) {
             childCheckboxesCount.forEach((checkbox) => {
-                if (checkbox ? .querySelector('label').querySelector('.interest__check').checked) {
+                if (checkbox ?.querySelector('label').querySelector('.interest__check').checked) {
                     checkedCount += 1;
                 }
             });
